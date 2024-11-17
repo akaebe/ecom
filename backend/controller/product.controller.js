@@ -57,11 +57,11 @@ export const UpdateProduct = async (req,res)=>{
       }
       try {
         const UpdatedProduct = await Product.findByIdAndUpdate(id,product,{new:true})
-        res.status(200).json({success:true,data:UpdatedProduct})
+        res.status(200).json({success:true,message:"product updated successfully",data:UpdatedProduct})
         
       } catch (error) {
         console.log(error.message)
-        res.status(500).json({success:fasle,message:"server Error"})
+        res.status(500).json({success:false,message:"server Error"})
         
       }
 }
